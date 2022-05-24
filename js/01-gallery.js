@@ -12,3 +12,16 @@ const link = galleryItems
   .join("");
 divQuery.innerHTML = link;
 
+
+divQuery.addEventListener("click", selectPic);
+
+function selectPic(event) {
+  event.preventDefault();
+  if (event.target.nodeName == "A") {
+      return;
+  } else {
+    basicLightbox.create(`<img src="${event.target.dataset.source}">`).show();
+  }
+}
+    
+
